@@ -1,8 +1,6 @@
 "use strict";
-// interface TransactionOBj {
-//   Pizza: number,
-//   Books: number,
-//   Job: number
+// interface TransactionObj {
+//   readonly [index: string]: number
 // }
 const todaysTransactions = {
     Pizza: -10,
@@ -20,3 +18,20 @@ const todaysNet = (transactions) => {
     }
     return total;
 };
+console.log(todaysNet(todaysTransactions));
+const student = {
+    name: 'Doug Doug',
+    GPA: 3.5,
+    classes: [100, 200]
+};
+//console.log(student.test)
+for (const key in student) {
+    console.log(`${key}: ${student[key]}`);
+}
+Object.keys(student).map(key => {
+    console.log(student[key]);
+});
+const logStudentKey = (student, key) => {
+    console.log(`Student ${key}: ${student[key]}`);
+};
+logStudentKey(student, 'GPA');
